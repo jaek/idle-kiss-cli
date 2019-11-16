@@ -4,7 +4,7 @@ A simple python script for testing the idle-kiss API
 
 ## usage
 
-Follow the instructions at (idle-kiss)[https://github.com/jjingram/idle-kiss]
+Follow the instructions at [idle-kiss](https://github.com/jjingram/idle-kiss)
 With the idle-kiss server running on http://127.0.0.1:8080, run:
 
 `./idle_cli.py`
