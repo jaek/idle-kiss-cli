@@ -1,6 +1,10 @@
 # idle-kiss CLI
 
-A simple python script for testing the idle-kiss API
+A simple python script for testing the idle-kiss/vent API.
+
+* idle-kiss repo: [idle-kiss](https://github.com/jjingram/idle-kiss)
+* vent repo: [vent](https://github.com/jjingram/vent)
+
 
 ## usage
 
