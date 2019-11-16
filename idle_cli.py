@@ -29,7 +29,8 @@ class VentShell(cmd.Cmd):
 
     def do_get_vent(self, vent_id, filename=None):
         'retrieve a single vent by id'
-        v = requests.get(self.url+vent_id)
+
+        v = requests.get(self.url+str(vent_id))
         if filename==None:
             p.pprint(v.json())
         else:
@@ -53,18 +54,35 @@ class VentShell(cmd.Cmd):
 
         json_vent = v.export_vent()
         v = requests.post(url=self.url, data=json_vent, headers=self.headers) 
+        print(v)
 
     def do_heart_vent(self, vent_id):
         'heart vent{id}'
-        h = requests.post(self.url+vent_id+'/heart')
-        print(self.url+vent_id+'/heart')
+        h = requests.post(self.url+str(vent_id)+'/heart')
+        print("sending heart to:"+self.url+str(vent_id)+'/heart')
         if h.status_code == requests.codes.ok:
             print("heart request succeeded")
+            print(h.status_code)
         else:
             print("heart request failed")
+            print(h.status_code)
     
-    def do_test(self):
-        do_post_vent(test)
+    def do_test(self, args):
+        'simple tests for cli functions'
+        print("Basic tests")
+        print("*" * 40)
+        print("\ndo_post_vent('test'):\n")
+        self.do_post_vent('test')
+        print("*" * 40)
+        print("\ndo_get_all:\n")
+        self.do_get_all(1)
+        print("*" * 40)
+        print("\ndo_get_vent(1):\n")
+        self.do_get_vent(1)
+        print("*" * 40)
+        print("\ndo_heart_vent(1):\n")
+        self.do_heart_vent(1)
+
 if __name__ == '__main__':
     v=VentShell()
     v.cmdloop()
