@@ -5,7 +5,6 @@ A simple python script for testing the idle-kiss/vent API.
 * idle-kiss repo: [idle-kiss](https://github.com/jjingram/idle-kiss)
 * vent repo: [vent](https://github.com/jjingram/vent)
 
-
 ## usage
 
 Follow the instructions at [idle-kiss](https://github.com/jjingram/idle-kiss)

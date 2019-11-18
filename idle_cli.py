@@ -58,7 +58,7 @@ class VentShell(cmd.Cmd):
 
     def do_heart_vent(self, vent_id):
         'heart vent{id}'
-        h = requests.post(self.url+str(vent_id)+'/heart')
+        h = requests.post(self.url+str(vent_id)+'/hearts')
         print("sending heart to:"+self.url+str(vent_id)+'/heart')
         if h.status_code == requests.codes.ok:
             print("heart request succeeded")
